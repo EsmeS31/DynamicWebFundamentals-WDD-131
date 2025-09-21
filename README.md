@@ -1,6 +1,6 @@
-# WDD 131 PAGE
+# WDD 131 Portolio
 
-## WDD 131 URL LINK
+## SITE URL
 
 https://esmes31.github.io/DynamicWebFundamentals-WDD-131/
 
