@@ -22,9 +22,6 @@ function renderTasks(tasks) {
 }
 
 
-
-
-
 function newTask() {
   // get the value entered into the #todo input
   const imputElement = document.querySelector("#todo");
