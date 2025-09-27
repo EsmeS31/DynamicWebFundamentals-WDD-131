@@ -1,0 +1,178 @@
+@import url("https://fonts.googleapis.com/css2?family=family=Mooli&display=swap");
+ :root {
+ --primary-color: #52489c;
+ --secondary-color: #59c3c3;
+ --text-dark: #333;
+ --text-light: #ebebeb;
+ --primary-font: Arial, Helvetica,sans-serif;
+ --secondary-font: Mooli, san-serif;
+ }
+
+ body {
+  font-family: var(--primary-font);
+  font-size: 1.2em;
+  background-color: #D3D3D3;
+}
+
+a:link,
+a:visited {
+  color: var(--accent-color);
+}
+
+img {
+	max-width: 100%;
+    border: 5px solid #ebebeb;
+}
+
+header {
+    background-color: var(--primary-color);
+    color: var(--text-light);
+    padding: 1em;
+    text-align: center;
+    font-family: var(--secondary-font);
+}
+
+ul {
+    list-style-type: none; /* Removes bullets from unordered lists */
+    margin: 0; /* Optional: Resets default margin */
+    padding: 0; /* Optional: Resets default padding */
+}
+
+ button {
+    background: none;
+    border: none;
+    padding: 0;
+    font: inherit;
+    color: inherit; 
+    cursor: pointer;
+    outline: none; 
+    appearance: none; 
+ }
+
+
+.menu-button{
+  display:inline-block;
+  background:transparent;
+  color: #fff;
+  padding:6px 10px;
+  border-radius:4px;
+}
+
+
+.hide{display:none}
+
+@media screen and (min-width: 700px) {
+  .gallery {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  nav ul, nav ul.hide { 
+    display:flex;
+    gap:1.8rem;
+    justify-content:center;
+    align-items:center;
+  }
+  .menu-button{display:none}
+  nav a{color: #fff; text-decoration:none}
+}
+
+@media screen and (min-width: 700px) {
+  .gallery {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+/* --------------------
+   Modal Viewer Styles
+-------------------- */
+.viewer {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.80);
+  display: none; /* shown when .open is added */
+  align-items: center;
+  justify-items: center;
+  z-index: 9999;
+}
+
+.viewer img {
+  max-height: calc(100vh - 160px);
+  max-width: 90vw;
+  display:block;
+}
+
+.close-viewer {
+  position: absolute;
+  top: 18px;
+  right: 18px;
+  color: white;
+  font-size: 1.15rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  z-index: 10002;
+}
+
+/* Large screen modal styles */
+@media screen and (min-width: 1000px) {
+  .viewer.open {
+    display: grid;
+    padding: 2rem;
+    grid-template-rows: auto 1fr auto;
+  }
+
+  .viewer-inner img {
+    max-width: 80vw;
+    max-height: calc(100vh - 220px);
+    border: 12px solid rgba(32,32,32,0.9);
+    box-shadow: 0 12px 0 rgba(0,0,0,0.5);
+  }
+}
+
+/* show when open (small screens) */
+.viewer.open{display:grid}
+
+/* viewer inner and thumbs */
+.viewer-inner {
+  width:90%;
+  max-width:1100px;
+  margin:0 auto;
+  display:grid;
+  place-items:center
+}
+
+.viewer-inner img {
+  width:100%;
+  height:auto;
+  border:20px solid rgba(30,30,30,0.9);
+  box-shadow:0 8px 0 rgba(0,0,0,0.45)
+}
+
+.thumbs {
+  display:flex;
+  gap:0.6rem;
+  justify-content:center;
+  position:absolute;
+  left:50%;
+  transform:translateX(-50%);
+  bottom:-44px;
+  padding-bottom:16px;
+  z-index:10001
+}
+.thumbs img{width: 72px;
+  height:72px;
+  object-fit:cover;
+  border:6px solid rgba(255,255,255,0.9);
+  box-shadow:0 2px 0 rgba(0,0,0,0.35)
+}
+
+@media (max-width:700px){
+  .viewer-inner{width:95%}
+  .viewer-inner img{border:14px solid rgba(30,30,30,0.9)}
+  .thumbs img{width:56px;height:56px}
+}
+
+/* prevent page scrolling while viewer open */
+body.no-scroll{overflow:hidden;height:100vh}
