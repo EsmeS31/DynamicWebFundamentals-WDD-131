@@ -1,0 +1,119 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* Body and Fonts */
+  body {
+    font-family: Helvetica, Arial, sans-serif;
+    background-color: #fff;
+    color: #473144;
+    line-height: 1.6;
+    margin: 0 auto;
+    max-width: 1200px;
+    padding: 1rem;
+  }
+  
+  h1, h2, h3 {
+    font-family: 'Lora', serif;
+    color: #AF1B3F;
+  }
+  
+  /* Skip link (Accessibility) */
+  .skiptocontent a {
+    position: absolute;
+    top: -40px;
+    left: 0;
+    color: #fff;
+    padding: 8px;
+    z-index: 100;
+  }
+  .skiptocontent a:focus {
+    top: 0;
+  }
+  
+  /* Header */
+  header {
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+  header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+  }
+  nav {
+    border-top: 2px solid #EFC69B;
+    border-bottom: 2px solid #EFC69B;
+    padding: 0.5rem 0;
+  }
+  .main-nav {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    justify-content: end;
+    gap: 2rem;
+  }
+  .main-nav a {
+    text-decoration: none;
+    font-size: 1.2rem;
+    color: #473144;
+  }
+  .main-nav a:hover {
+    color: #AF1B3F;
+  }
+  
+  /* Layout */
+  main {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 2rem;
+  }
+  .articles-container {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+  
+  /* Articles */
+  article {
+    display: grid;
+    grid-template-columns: 150px 1fr;
+    gap: 1rem;
+    padding: 1rem;
+    border: 1px solid #EFC69B;
+    border-radius: 8px;
+    background-color: #fdfaf6;
+  }
+  article img {
+    width: 100%;
+    border-radius: 4px;
+  }
+  article h2 {
+    margin-bottom: 0.3rem;
+  }
+  article p {
+    margin-bottom: 0.5rem;
+  }
+  .article-meta {
+    font-size: 0.9rem;
+    color: #666;
+  }
+  
+  /* Sidebar (Filters placeholder) */
+  .filters {
+    padding: 1rem;
+    border: 1px dashed #ccc;
+    border-radius: 8px;
+  }
+  
+  /* Footer */
+  footer {
+    margin-top: 2rem;
+    text-align: center;
+    padding: 1rem 0;
+    border-top: 2px solid #EFC69B;
+    font-size: 0.9rem;
+  }
+  
