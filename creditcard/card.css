@@ -83,9 +83,6 @@ body {
   right: 0;
 }
 
-#card-success {
-  color: #02f362;
-}
 
 #card-token {
   display: none;
@@ -128,30 +125,6 @@ body {
   position: relative;
 }
 
-#form-errors {
-  color: #eb0000;
-}
-
-#form-errors,
-#card-success {
-  background-color: white;
-  width: 500px;
-  margin: 0 auto 10px;
-  height: 50px;
-  border-radius: 8px;
-  padding: 0 20px;
-  font-weight: 400;
-  box-sizing: border-box;
-  line-height: 46px;
-  letter-spacing: .5px;
-  text-transform: none;
-}
-
-#form-errors p,
-#card-success p {
-  margin: 0 5px;
-  display: inline-block;
-}
 
 #exp-container {
   margin-left: 10px;
@@ -187,6 +160,98 @@ body {
   height: 40px;
   border-radius: 6px;
   display: block;
+}
+
+/* Error message pop-up styling */
+.errorMsg {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #ff4444;
+  color: white;
+  padding: 20px 30px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  text-align: center;
+  z-index: 1000;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  max-width: 400px;
+  line-height: 1.4;
+  white-space: pre-line;
+  display: none;
+}
+
+/* Success message pop-up styling */
+#card-success {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #02f362;
+  color: white;
+  padding: 20px 30px;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 500;
+  text-align: center;
+  z-index: 1000;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  width: 200px;
+  height: 50px;
+  line-height: 10px;
+  display: none;
+  align-items: center;
+  justify-content: center;
+}
+
+#card-success i {
+  font-size: 24px;
+  margin-right: 10px;
+}
+
+/* Overlay background for pop-ups */
+.popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 999;
+  display: none;
+}
+
+/* Error pop-up styling */
+#form-errors {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #ff4444;
+  color: white;
+  padding: 20px 30px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  text-align: center;
+  z-index: 1000;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  max-width: 400px;
+  line-height: 1.4;
+  white-space: pre-line;
+  display: none;
+}
+
+#form-errors i {
+  font-size: 20px;
+  margin-right: 10px;
+}
+
+#form-errors p {
+  margin: 0;
+  display: inline;
 }
 
 input {

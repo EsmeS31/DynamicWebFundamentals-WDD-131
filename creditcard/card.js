@@ -21,10 +21,37 @@ function isDateValid(month, year) {
 }
 
 function displayError(msg) {
-	// display error message
-	document.querySelector('.errorMsg').innerHTML = msg
+	// display error message as pop-up
+	const errorElement = document.querySelector('#form-errors')
+	const errorText = document.querySelector('#card-error')
+	const overlay = document.querySelector('#popup-overlay')
+	if (msg) {
+		errorText.innerHTML = msg
+		errorElement.style.display = 'block'
+		overlay.style.display = 'block'
+		// Auto-hide after 5 seconds
+		setTimeout(() => {
+			errorElement.style.display = 'none'
+			overlay.style.display = 'none'
+		}, 5000)
+	} else {
+		errorElement.style.display = 'none'
+		overlay.style.display = 'none'
+	}
 }
 
+function showSuccess() {
+	// show success message as pop-up
+	const successElement = document.querySelector('#card-success')
+	const overlay = document.querySelector('#popup-overlay')
+	successElement.style.display = 'flex'
+	overlay.style.display = 'block'
+	// Auto-hide after 3 seconds
+	setTimeout(() => {
+		successElement.style.display = 'none'
+		overlay.style.display = 'none'
+	}, 3000)
+}
 function submitHandler(event) {
 	event.preventDefault()
 	let errorMsg = ''
@@ -60,8 +87,15 @@ function submitHandler(event) {
 	}
 	
 	// If we get here, all validation passed
-	alert('Form submitted successfully!')
+	showSuccess()
 	return true
 }
 
 document.querySelector('#credit-card').addEventListener('submit', submitHandler)
+
+// Add click event to close pop-ups when clicking overlay
+document.querySelector('#popup-overlay').addEventListener('click', function() {
+	document.querySelector('#form-errors').style.display = 'none'
+	document.querySelector('#card-success').style.display = 'none'
+	this.style.display = 'none'
+})
