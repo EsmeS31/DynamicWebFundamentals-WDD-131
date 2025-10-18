@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Discover delicious recipes with our recipe book. Find amazing dishes from desserts to main courses.">
+    
+    <!-- Social Media Meta Tags -->
+    <meta property="og:title" content="Recipe Book - Delicious Recipes">
+    <meta property="og:type" content="website" />
+    <meta property="og:description" content="Discover delicious recipes with our recipe book. Find amazing dishes from desserts to main courses.">
+    <meta property="og:image" content="images/apple-crisp.jpg">
+    <meta property="og:url" content="http://localhost:8000">
+    <meta name="twitter:card" content="summary_large_image">
+    
+    <link rel="stylesheet" href="recipes.css">
+    <link rel="preload" href="images/apple-crisp.jpg" as="image">
+    <script src="recipes.js" defer></script>
+    <title>Recipe Book - Delicious Recipes</title>
+</head>
+<body>
+    <header>
+        <img id= "logo" src="images/recipe-book.png" alt="recipe book" class="logo">
+        <h1>Recipie Book</h1>
+
+        <form action="/search" method="get">
+        <input type="search" id="search-query" name="q" placeholder="Find a recipie">
+        <button id="search" type="submit"> <img src="images/search.svg" alt="search icon"> </button>
+</form>
+    </header>
+ <main>
+  <section class="recipie">
+    <p class="category">Dessert</p>
+    <img src="images/apple-crisp.jpg" alt="apple crisp" class="recipie-img">
+    <h2>Apple Crisp</h2>
+    <p class="description"> This apple crisp recipie is a simple yet delicious fall desert
+    that's great served warm vanilla ice cream.</p>
+    <span
+	class="rating"
+	role="img"
+	aria-label="Rating: 4 out of 5 stars"
+>
+	<span aria-hidden="true" class="icon-star">⭐</span>
+	<span aria-hidden="true" class="icon-star">⭐</span>
+	<span aria-hidden="true" class="icon-star">⭐</span>
+	<span aria-hidden="true" class="icon-star-empty">⭐</span>
+	<span aria-hidden="true" class="icon-star-empty">☆</span>
+</span>
+  </section>
+</main>
+
+<footer>
+<div class="social">
+	<a href="#"><img src="images/instagram_icon.svg" alt="instagram icon"></a>
+	<a href="#"><img src="images/youtube_icon.svg" alt="youtube icon"></a>
+	<a href="#"><img src="images/pinterest_icon.svg" alt="pinterest icon"></a>
+</div>
+ <a href="https://www.flaticon.com/free-icons/recipe" title="recipe icons">Recipe icons created by Freepik - Flaticon</a>
+</footer>
+</body>
+</html>

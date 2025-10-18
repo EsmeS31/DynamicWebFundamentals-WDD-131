@@ -1,0 +1,269 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap');
+
+:root {
+    --primary-color: #1B98E0;
+    --secondary-color: #59c3c3;
+    --text-dark: #333;
+    --text-light: #ebebeb;
+    --primary-font: Arial, Helvetica, sans-serif;
+    --secondary-font: "Quicksand";
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--primary-font);
+    background-color: white;
+    color: var(--text-dark);
+    line-height: 1.6;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Header Styles */
+header {
+    text-align: center;
+    padding: 20px;
+    background-color: white;
+}
+
+#logo {
+    width: 60px;
+    height: 60px;
+    margin-bottom: 10px;
+}
+
+h1 {
+    font-family: var(--secondary-font);
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--text-dark);
+    margin-bottom: 20px;
+}
+
+/* Search Form */
+form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 30px;
+    max-width: 300px;
+    margin-left: auto;
+    margin-right: auto;
+    border-color: #333;
+}
+
+#search-query {
+    flex: 1;
+    padding: 12px 16px;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    outline: none;
+    background-color: #f5f5f5;
+    size-adjust: 100%;
+    border-color: #333;
+}
+
+#search-query::placeholder {
+    color: #999;
+}
+
+#search {
+    background: none;
+    border: none;
+    border-radius: 8px;
+    padding: 8px;
+    margin-left: 8px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-color: #333;
+    border-width: 1px;
+    border-style: solid;
+}
+
+#search img {
+    width: 20px;
+    height: 20px;
+}
+
+/* Main Content */
+main {
+    padding: 0 20px;
+    margin-bottom: 40px;
+}
+
+.recipie {
+    background-color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    border-color: #333;
+    border-width: 1px;
+    border-style: solid;
+}
+
+.recipie-img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 4px;
+}
+
+.recipe-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    color: var(--text-dark);
+}
+
+.tags {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 8px;
+}
+
+.category {
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: bold;
+    text-transform: Sentence Case;
+    display:contents;
+    border-color: #333;
+    border-width: 1px;
+    border-style: solid;
+}
+
+h2 {
+    font-family: var(--secondary-font);
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--text-dark);
+    margin: 0 0 10px 0;
+}
+
+.description {
+    display: block;
+    color: var(--text-dark);
+    font-size: 14px;
+    line-height: 1.5;
+    margin-bottom: 10px;
+}
+
+/* Rating Styles */
+.rating {
+    display: flex;
+    gap: 2px;
+    margin-top: 10px;
+    align-items: center;
+}
+
+.icon-star {
+    color: #FFD700;
+    font-size: 18px;
+}
+
+.icon-star-empty {
+    color: var(--text-dark);
+    font-size: 18px;
+}
+
+/* Footer */
+footer {
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.social {
+    display: flex;
+    gap: 10px;
+}
+
+.social a {
+    display: flex;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 8px;
+    background-color: white;
+}
+
+.social img {
+    width: 24px;
+    height: 24px;
+}
+
+footer a {
+    color: var(--text-dark);
+    text-decoration: none;
+    font-size: 12px;
+}
+
+/* Responsive Design for Larger Screens */
+@media (min-width: 600px) {
+    .recipie {
+        flex-direction: row;
+        align-items: flex-start;
+        gap: 20px;
+        max-width: 600px;
+        margin: 20px auto;
+    }
+    
+    .recipie-img {
+        width: 200px;
+        height: 150px;
+        flex-shrink: 0;
+    }
+    
+    .description {
+        display: block;
+        color: var(--text-dark);
+        font-size: 14px;
+        line-height: 1.5;
+    }
+    
+    h1 {
+        font-size: 3rem;
+    }
+    
+    h2 {
+        font-size: 2.5rem;
+    }
+}
+
+@media (min-width: 960px) {
+    .recipie {
+        max-width: 800px;
+    }
+    
+    main {
+        max-width: 1000px;
+        margin: 0 auto;
+    }
+    
+    header {
+        max-width: 1000px;
+        margin: 0 auto;
+    }
+    
+    footer {
+        max-width: 1000px;
+        margin: 0 auto;
+    }
+}
