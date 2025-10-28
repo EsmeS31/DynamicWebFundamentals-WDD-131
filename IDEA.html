@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Flashcard Topics</title>
+<style>
+    .flashcard-container {
+        perspective: 1000px; /* For 3D flip effect */
+    }
+    .flashcard {
+        width: 300px;
+        height: 200px;
+        position: relative;
+        transform-style: preserve-3d;
+        transition: transform 0.6s;
+        cursor: pointer;
+    }
+    .flashcard.flipped {
+        transform: rotateY(180deg);
+    }
+    .front, .back {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        backface-visibility: hidden; /* Hide the back when facing away */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: 1px solid #ccc;
+        background-color: #fff;
+    }
+    .back {
+        transform: rotateY(180deg);
+    }
+</style>
+</head>
+<body>
+
+    <div class="flashcard-container">
+        <div class="flashcard" onclick="this.classList.toggle('flipped');">
+            <div class="front">Question or Term</div>
+            <div class="back">Answer or Definition</div>
+        </div>
+        <button id="prevBtn">Previous</button>
+        <button id="nextBtn">Next</button>
+    </div>
+
+<script>
+     const flashcards = [
+        { question: "HTML stands for?", answer: "HyperText Markup Language" },
+        { question: "CSS stands for?", answer: "Cascading Style Sheets" }
+    ];
+    let currentCardIndex = 0;
+
+    const flashcardElement = document.querySelector('.flashcard');
+    const frontElement = document.querySelector('.front');
+    const backElement = document.querySelector('.back');
+    const prevBtn = document.getElementById('prevBtn');
+    const nextBtn = document.getElementById('nextBtn');
+
+    function displayCard(index) {
+        frontElement.textContent = flashcards[index].question;
+        backElement.textContent = flashcards[index].answer;
+        flashcardElement.classList.remove('flipped'); // Ensure it's not flipped when changing cards
+    }
+
+    prevBtn.addEventListener('click', () => {
+        currentCardIndex = (currentCardIndex - 1 + flashcards.length) % flashcards.length;
+        displayCard(currentCardIndex);
+    });
+
+    nextBtn.addEventListener('click', () => {
+        currentCardIndex = (currentCardIndex + 1) % flashcards.length;
+        displayCard(currentCardIndex);
+    });
+
+    displayCard(currentCardIndex); // Initial display
+</script>
+
+</body>
+</html>
